@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe button working</title>
+  </head>
+  <body>
+    <p class="js-simpleText">Please Subscribe</p>
+    <button onclick="subscribe()" class="js-subscribe">Subscribe</button>
+    <script>
+      function subscribe() {
+        if (document.querySelector(".js-subscribe").innerText == "Subscribe") {
+          document.querySelector(".js-subscribe").innerText = "Subscribed";
+          document.querySelector(".js-simpleText").innerText =
+            "Thank you for subscribe";
+        } else {
+          document.querySelector(".js-subscribe").innerText = "Subscribe";
+          document.querySelector(".js-simpleText").innerText =
+            "Please Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>

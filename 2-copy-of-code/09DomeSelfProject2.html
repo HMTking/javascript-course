@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Delivery charge set_up</title>
+  </head>
+  <body>
+    <p>
+      if you directly enter the button "ENTER" than no need to press button with
+      cursor
+    </p>
+    <p>
+      Enter the total cost of products "if cost of product is less than 40 than
+      10 rupee extra delivery charge"
+    </p>
+
+    <!-- onkeydown="EnterButtonFeature(event)" note that event is the object which have the recently press key -->
+    <input
+      onkeydown="EnterButtonFeature(event)"
+      type="string"
+      class="js-price"
+      placeholder="Enter the Cost"
+    />
+    <button class="js-calculate" onclick="calculate()">Calculate</button>
+    <p class="js-ans"></p>
+
+    <script>
+      function EnterButtonFeature(ramu) {
+        console.log(ramu.key);
+        if (ramu.key == "Enter") {
+          calculate();
+        }
+      }
+
+      function calculate() {
+        if (Number(document.querySelector(".js-price").value) < 40) {
+          document.querySelector(".js-ans").innerText = `The final Cost is:${
+            Number(document.querySelector(".js-price").value) + 10
+          }`;
+        } else {
+          document.querySelector(
+            ".js-ans"
+          ).innerText = `The final Cost is:${Number(
+            document.querySelector(".js-price").value
+          )}`;
+        }
+      }
+    </script>
+  </body>
+</html>
