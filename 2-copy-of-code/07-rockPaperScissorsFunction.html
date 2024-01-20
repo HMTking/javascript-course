@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="playgame('rock');">STONE</button>
+    <button onclick="playgame('paper');">PAPER</button>
+    <button onclick="playgame('scissors');">SCISSORS</button>
+
+    <script>
+      function playgame(event) {
+        let ComputerMove = computerMove();
+        if (event == ComputerMove) {
+          console.log("drow");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "paper" && ComputerMove == "rock") {
+          console.log("win");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "paper" && ComputerMove == "scissors") {
+          console.log("loss");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "rock" && ComputerMove == "scissors") {
+          console.log("win");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "rock" && ComputerMove == "paper") {
+          console.log("loss");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "scissors" && ComputerMove == "paper") {
+          console.log("win");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        } else if (event == "scissors" && ComputerMove == "rock") {
+          console.log("loss");
+          console.log(`you choose ${event}, Computer Choose ${ComputerMove}`);
+        }
+      }
+
+      function computerMove() {
+        const comMove = Math.random();
+        if (comMove < 1 / 3) {
+          return "rock";
+        } else if (comMove < 2 / 3) {
+          return "paper";
+        } else {
+          return "scissors";
+        }
+      }
+    </script>
+  </body>
+</html>

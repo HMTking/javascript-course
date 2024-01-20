@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="console.log(`net items is: ${currentItems}`);">
+      net items
+    </button>
+    <button
+      onclick=" currentItems=0; console.log(`net items is: ${currentItems}`);"
+    >
+      reset
+    </button>
+    <button
+      onclick="currentItems +=1;console.log(`net items is: ${currentItems}`);"
+    >
+      add one
+    </button>
+    <button
+      onclick="currentItems -=1;console.log(`net items is: ${currentItems}`);"
+    >
+      delete one
+    </button>
+
+    <script>
+      let currentItems = 0;
+    </script>
+  </body>
+</html>
