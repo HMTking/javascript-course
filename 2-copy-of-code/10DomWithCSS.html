@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe button working</title>
+
+    <style>
+      .css-button {
+        padding: 10px;
+        background-color: black;
+        color: yellow;
+        border: 0px;
+        border-radius: 50px;
+      }
+
+      .css-button2 {
+        padding: 10px;
+        background-color: yellow;
+        color: black;
+        border: 0px;
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="js-simpleText">Please Subscribe</p>
+    <button onclick="subscribe()" class="js-subscribe css-button">
+      Subscribe
+    </button>
+    <script>
+      function subscribe() {
+        if (document.querySelector(".js-subscribe").innerText == "Subscribe") {
+          document.querySelector(".js-subscribe").innerText = "Subscribed";
+          document.querySelector(".js-simpleText").innerText =
+            "Thank you for subscribe";
+          document.querySelector(".js-subscribe").classList.add("css-button2");
+          document
+            .querySelector(".js-subscribe")
+            .classList.remove("css-button");
+        } else {
+          document.querySelector(".js-subscribe").innerText = "Subscribe";
+          document.querySelector(".js-simpleText").innerText =
+            "Please Subscribe";
+          document.querySelector(".js-subscribe").classList.add("css-button");
+          document
+            .querySelector(".js-subscribe")
+            .classList.remove("css-button2");
+        }
+      }
+    </script>
+  </body>
+</html>
